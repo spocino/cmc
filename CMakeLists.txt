@@ -25,6 +25,10 @@ target_include_directories(cmc_server PRIVATE include)
 add_executable(cmc_client src/client.c)
 target_include_directories(cmc_client PRIVATE include)
 
+add_executable(cmc_test_buffer_builder tests/libmc/buffer_builder.c)
+target_include_directories(cmc_test_buffer_builder PRIVATE include)
+add_test(NAME buffer_builder COMMAND cmc_test_buffer_builder)
+
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
